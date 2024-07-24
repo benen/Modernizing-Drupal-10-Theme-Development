@@ -4,11 +4,33 @@
   "description": "Alps Trips dependencies",
   "author": "Luca Lusso",
   "license": "GPL-3.0",
-  "dependencies": {
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "css-loader": "6",
+    "eslint": "8",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-yml": "^1.14.0",
+    "mini-css-extract-plugin": "2",
+    "postcss": "^8.4.39",
+    "postcss-loader": "7",
+    "prettier": "^3.3.3",
+    "stylelint": "15",
+    "stylelint-config-standard": "33",
+    "stylelint-config-tailwindcss": "0.0.7",
+    "stylelint-order": "6",
+    "tailwindcss": "3",
+    "webpack": "5",
+    "webpack-cli": "5"
   },
   "scripts": {
-    "build:dev": "ls",
-    "lint:js": "ls",
-    "lint:css": "ls"
+    "build": "webpack --config webpack.config.js",
+    "build:dev": "webpack --config webpack.config.js --mode development",
+    "start": "webpack --watch",
+    "start:dev": "webpack --watch --mode development",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:js": "node ./node_modules/eslint/bin/eslint.js --fix ."
   }
 }
